@@ -13,7 +13,11 @@ app = Flask(__name__)
 CORS(app)
 load_dotenv()
 
-client = MongoClient(os.getenv("Mongo_URI"))
+MONGO_URL = os.getenv("Mongo_URI")
+EMAIL = os.getenv("mail")
+EMAIL_PASS = os.getenv("mail_sender")
+
+client = MongoClient(MONGO_URL)
 db = client['Nexto']
 collection = db['User_Credentials']
 otp_store = {}
@@ -78,8 +82,8 @@ def send_otp():
     }
 
     # 📧 Send email (Gmail example)
-    sender = os.getenv("mail")
-    password = os.getenv("mail_sender")
+    sender = os.getenv("EMAIL")
+    password = os.getenv("EMAIL_PASS")
 
     msg = MIMEText(f"Your OTP is {otp}")
     msg["Subject"] = "Password Reset OTP"
