@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Auth Page</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="form-box">
+
+    <!-- 🔐 LOGIN -->
+    <div id="login-box">
+      <h2>Login</h2>
+
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+
+      <button id="login-btn">Login</button>
+
+      <p>
+        Don't have an account?
+        <span id="show-register" class="link">Register</span>
+      </p>
+
+      <p>
+        <span id="show-forgot" class="link">Forgot Password?</span>
+      </p>
+    </div>
+
+    <!-- 📝 REGISTER -->
+    <div id="register-box" style="display:none;">
+      <h2>Register</h2>
+
+      <input type="text" id="reg-name" placeholder="Full Name" required>
+      <input type="email" id="reg-email" placeholder="Email" required>
+      <input type="password" id="reg-password" placeholder="Password" required>
+
+      <button id="register-btn">Register</button>
+
+      <p>
+        Already have an account?
+        <span id="show-login" class="link">Login</span>
+      </p>
+    </div>
+
+    <!-- 🔑 FORGOT PASSWORD -->
+    <div id="forgot-box" style="display:none;">
+      <h2>Reset Password</h2>
+
+      <input type="email" id="forgot-email" placeholder="Enter Email" required>
+      <button type="button" id="send-otp">Send OTP</button>
+
+      <input type="text" id="otp" placeholder="Enter OTP">
+      <input type="password" id="new-password" placeholder="New Password">
+
+      <button type="button" id="reset-password">Reset Password</button>
+
+      <p>
+        <span id="back-login" class="link">Back to Login</span>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
